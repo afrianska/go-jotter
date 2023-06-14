@@ -11,14 +11,12 @@ import (
 )
 
 type User struct {
-	ID 			uint	`validate:"required,omitempty"`
+	ID 	uint	`validate:"required,omitempty"`
 	Username	string	`validate:"required"`
 	Password	string	`validate:"gte=6"` // gte = greater than or equal (6 is value)
-
 }
 
 func getTest(ctx *fiber.Ctx) error {
-	// // sample data input to match with struct
 		user := User{
 			ID : 1,
 			Username : "afrian",
@@ -36,9 +34,9 @@ func getTest(ctx *fiber.Ctx) error {
 func main() {
 	app := fiber.New()
 	
-
-	// use cors
 	app.Use(cors.New())
+
 	app.Get("/tests", getTest)
+
 	log.Fatal(app.Listen(os.Getenv("PORT")))
 }
