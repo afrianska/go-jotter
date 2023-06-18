@@ -1,0 +1,13 @@
+# Env
+*.env
+
+# Log
+*.log
+
+# complile file
+*.exe
+*.exe~
+
+# go work file
+*.work
+*.work.sum
